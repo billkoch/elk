@@ -1,0 +1,11 @@
+kibana:
+  image: clusterhq/kibana
+  ports:
+    - "8080:8080"
+  links:
+    - elasticsearch
+
+elasticsearch:
+  image: dockerfile/elasticsearch
+  ports:
+    - "9200:9200"
