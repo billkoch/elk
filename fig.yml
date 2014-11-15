@@ -1,7 +1,7 @@
 kibana:
-  image: clusterhq/kibana
+  image: billkoch/kibana:3.0.1
   ports:
-    - "8080:8080"
+    - "80:8080"
   links:
     - elasticsearch
 
@@ -9,3 +9,19 @@ elasticsearch:
   image: dockerfile/elasticsearch
   ports:
     - "9200:9200"
+    - "9300:9300"
+
+rabbitmq:
+  image: dockerfile/rabbitmq
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+
+logstash:
+  image: billkoch/logstash:1.4.2
+  links:
+    - elasticsearch
+    - rabbitmq
+  volumes:
+    - ./logstash:/opt/logstash/conf
+
