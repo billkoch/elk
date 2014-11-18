@@ -8,5 +8,7 @@ Getting started:
   <li>`fig up`</li>
 </ol>
 
-The RabbitMQ Admin UI is configured via fig.yml to be available @ http://localhost:15672 (by default)
-The Kibana front-end for ElasticSearch is configured via fig.yml to be available @ http://localhost:80 (by default)
+<ul>
+  <li>The RabbitMQ Admin UI is configured via fig.yml to be available @ http://localhost:15672 (by default)</li>
+  <li>The Kibana front-end for ElasticSearch is configured via fig.yml to be available @ http://localhost:80 (by default)</li>
+</ul>
