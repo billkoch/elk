@@ -7,6 +7,8 @@ kibana:
 
 elasticsearch:
   image: dockerfile/elasticsearch
+  volumes:
+    - ./elasticsearch/data:/data
   ports:
     - "9200:9200"
     - "9300:9300"
