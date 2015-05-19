@@ -4,17 +4,15 @@ kibana:
     - "80:8080"
   links:
     - elasticsearch
-
 elasticsearch:
-  image: dockerfile/elasticsearch
+  image: elasticsearch:1.3.9
   volumes:
     - ./elasticsearch/data:/data
   ports:
     - "9200:9200"
     - "9300:9300"
-
 rabbitmq:
-  image: dockerfile/rabbitmq
+  image: library/rabbitmq:3.5.1-management
   ports:
     - "5672:5672"
     - "15672:15672"
@@ -26,4 +24,3 @@ logstash:
     - rabbitmq
   volumes:
     - ./logstash:/opt/logstash/conf
-
